@@ -6,6 +6,10 @@ class Menu:
         self.start_time = start_time
         self.end_time = end_time
 
+    def __repr__(self):
+        str_repr = f"{self.name} menu is available from {self.start_time} to {self.end_time}"
+        return str_repr
+
 # Brunch Menu
 brunch_items = {
   'pancakes': 7.50, 
@@ -51,3 +55,9 @@ kids_items = {
 }
 kids = Menu('Kids', kids_items, 11, 21)
 #---------------------------------------------------#
+
+# Print string rep for objects
+print(brunch)
+print(early_bird)
+print(dinner)
+print(kids)
