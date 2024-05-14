@@ -74,14 +74,19 @@ kids = Menu('Kids', kids_items, 11, 21)
 
 
 # Test calculate() method
-def print_receipt(orders, menu, total):
+def print_receipt(orders, total):
     print("\n************* RECEIPT *******************")
     for order in orders:
-        print(f"{order}: {menu.items[order]}")
+        print(f"{order}")
     print(f"\nTotal {total}")
     print("******************************************\n")
 
 breakfast_order = ['pancakes', 'home fries', 'coffee']
 breakfast_order__total = brunch.calculate_bill(breakfast_order)
-print_receipt(breakfast_order, brunch, breakfast_order__total)
+print_receipt(breakfast_order, breakfast_order__total)
 
+# early bird order
+early_bird_order = ['salumeria plate']
+dinner_order = [ 'mushroom ravioli (vegan)']
+early_bird_dinner_total = dinner.calculate_bill(dinner_order) + early_bird.calculate_bill(early_bird_order)
+print_receipt(early_bird_order + dinner_order, early_bird_dinner_total)
