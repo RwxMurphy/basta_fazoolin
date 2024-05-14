@@ -9,6 +9,15 @@ class Menu:
     def __repr__(self):
         str_repr = f"{self.name} menu is available from {self.start_time} to {self.end_time}"
         return str_repr
+    
+    def calculate_bill(self, purchased_items):
+        total_price = 0
+        for item in purchased_items:
+            total_price += self.items[item]
+        return total_price
+    
+
+
 
 # Brunch Menu
 brunch_items = {
@@ -56,8 +65,23 @@ kids_items = {
 kids = Menu('Kids', kids_items, 11, 21)
 #---------------------------------------------------#
 
-# Print string rep for objects
-print(brunch)
-print(early_bird)
-print(dinner)
-print(kids)
+# Test repr for created objects
+# print(brunch)
+# print(early_bird)
+# print(dinner)
+# print(kids)
+
+
+
+# Test calculate() method
+def print_receipt(orders, menu, total):
+    print("\n************* RECEIPT *******************")
+    for order in orders:
+        print(f"{order}: {menu.items[order]}")
+    print(f"\nTotal {total}")
+    print("******************************************\n")
+
+breakfast_order = ['pancakes', 'home fries', 'coffee']
+breakfast_order__total = brunch.calculate_bill(breakfast_order)
+print_receipt(breakfast_order, brunch, breakfast_order__total)
+
