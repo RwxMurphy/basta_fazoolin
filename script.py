@@ -23,7 +23,7 @@ class Menu:
 brunch_items = {
   'pancakes': 7.50, 
   'waffles': 9.00, 
-  'burger': 11.00, 
+  'burger': 11.00, git 
   'home fries': 4.50, 
   'coffee': 1.50, 
   'espresso': 3.00, 
