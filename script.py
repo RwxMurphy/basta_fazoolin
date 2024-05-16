@@ -16,6 +16,13 @@ class Menu:
             total_price += self.items[item]
         return total_price
     
+class Franchise:
+    def __init__(self, address, menus):
+      self.address = address
+      self.menus = menus
+    
+    def __repr__(self):
+        return self.address
 
 
 
@@ -23,7 +30,7 @@ class Menu:
 brunch_items = {
   'pancakes': 7.50, 
   'waffles': 9.00, 
-  'burger': 11.00, git 
+  'burger': 11.00,
   'home fries': 4.50, 
   'coffee': 1.50, 
   'espresso': 3.00, 
@@ -90,3 +97,11 @@ early_bird_order = ['salumeria plate']
 dinner_order = [ 'mushroom ravioli (vegan)']
 early_bird_dinner_total = dinner.calculate_bill(dinner_order) + early_bird.calculate_bill(early_bird_order)
 print_receipt(early_bird_order + dinner_order, early_bird_dinner_total)
+
+
+# Create franchises
+flagship_store = Franchise('1232 West End Road', [brunch, early_bird, dinner, kids])
+new_installment = Franchise('12 East Mulberry Street', [brunch, early_bird, dinner, kids])
+
+print(flagship_store)
+print(new_installment)
