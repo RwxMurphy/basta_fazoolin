@@ -30,6 +30,12 @@ class Franchise:
             if time >= menu.start_time and time <= menu.end_time:
                 list_of_menus.append(menu)
         return list_of_menus
+    
+class Business:
+    def __init__(self, name, franchises):
+        self.name = name
+        self.franchises = franchises
+
 
 
 
@@ -118,3 +124,6 @@ print(available_menus)
 # Available menus at 5pm
 available_menus = new_installment.available_menus(17)
 print(available_menus)
+
+#Create new business 
+resturant_business = Business('Basta Fazoolin with my Heart', [flagship_store, new_installment])
