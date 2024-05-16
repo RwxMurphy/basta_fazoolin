@@ -23,6 +23,13 @@ class Franchise:
     
     def __repr__(self):
         return self.address
+    
+    def available_menus(self, time):
+        list_of_menus = []
+        for menu in self.menus:
+            if time >= menu.start_time and time <= menu.end_time:
+                list_of_menus.append(menu)
+        return list_of_menus
 
 
 
@@ -72,11 +79,11 @@ kids_items = {
 kids = Menu('Kids', kids_items, 11, 21)
 #---------------------------------------------------#
 
-# Test repr for created objects
-# print(brunch)
-# print(early_bird)
-# print(dinner)
-# print(kids)
+print("Test repr for created objects")
+print(brunch)
+print(early_bird)
+print(dinner)
+print(kids)
 
 
 
@@ -102,6 +109,12 @@ print_receipt(early_bird_order + dinner_order, early_bird_dinner_total)
 # Create franchises
 flagship_store = Franchise('1232 West End Road', [brunch, early_bird, dinner, kids])
 new_installment = Franchise('12 East Mulberry Street', [brunch, early_bird, dinner, kids])
-
 print(flagship_store)
 print(new_installment)
+
+# Available menus 12noon
+available_menus = flagship_store.available_menus(12)
+print(available_menus)
+# Available menus at 5pm
+available_menus = new_installment.available_menus(17)
+print(available_menus)
