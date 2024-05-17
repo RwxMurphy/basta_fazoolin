@@ -127,3 +127,15 @@ print(available_menus)
 
 #Create new business 
 resturant_business = Business('Basta Fazoolin with my Heart', [flagship_store, new_installment])
+
+# Arepas
+print("*************************************************")
+
+arepas_items = {
+  'arepa pabellon': 7.00,
+  'pernil arepa': 8.50, 
+  'guayanes arepa': 8.00, 
+  'jamon arepa': 7.50
+}
+arepas_menu = Menu("Take a 'Arepa", arepas_items, 10, 20)
+print(arepas_menu)
