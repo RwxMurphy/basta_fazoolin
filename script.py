@@ -139,3 +139,7 @@ arepas_items = {
 }
 arepas_menu = Menu("Take a 'Arepa", arepas_items, 10, 20)
 print(arepas_menu)
+
+# Create arepas franchise
+arepas_place = Franchise('189 Fitzgerald Avenue', [arepas_menu])
+print(arepas_place)
